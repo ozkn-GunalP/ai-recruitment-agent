@@ -4,6 +4,7 @@ sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 
 import streamlit as st
 import chromadb
+import chromadb.config
 
 from utils.auth import check_password
 from utils.resume_parser import parse_resume
@@ -28,8 +29,7 @@ def get_chroma_collection():
     host = st.secrets.get("CHROMA_HOST")
 
     if host:
-        import chromadb.config
-
+        
         chroma_api_key = st.secrets.get("CHROMA_API_KEY", "")
         settings = chromadb.config.Settings(
             chroma_api_impl="rest",
