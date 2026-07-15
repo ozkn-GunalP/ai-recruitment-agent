@@ -5,9 +5,8 @@ from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_excep
 
 # Ücretsiz model fallback zinciri — ilki başarısız olursa sıradakine geçer
 FREE_MODELS = [
-    "meta-llama/llama-4-maverick:free",
-    "google/gemini-2.5-flash-preview:free",
-    "mistralai/mistral-small-3.1-24b-instruct:free",
+    "openrouter/free",
+    "meta-llama/llama-3.3-70b-instruct:free",
 ]
 
 MAX_RESUME_CHARS = 3000  # CV başına karakter üst sınırı (1000'den yükseltildi)
